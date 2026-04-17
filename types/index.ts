@@ -36,10 +36,11 @@ export interface Goals {
 }
 
 export interface DashboardData {
-  semana: string;       // "16 mar 2026"
+  semana: string;       // "16/03/2026"
   lancamento: number;
   daily: DailyData[];
   goals: Goals;
+  totalMqls: number;    // MQLs totais — IA Henrique (seção separada na planilha)
   status: "Em andamento" | "Finalizada" | "Não iniciada";
   lastUpdated: string;
 }

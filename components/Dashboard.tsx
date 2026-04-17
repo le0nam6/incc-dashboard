@@ -111,7 +111,7 @@ function MiniRow({ label, val, meta, color, badgeVariant }: MiniRowProps) {
 // ─── main component ───────────────────────────────────────────────────────────
 
 export default function Dashboard({ data }: { data: DashboardData }) {
-  const { daily, goals, semana, lancamento, status, lastUpdated } = data;
+  const { daily, goals, semana, lancamento, status, lastUpdated, totalMqls } = data;
 
   // Totals
   const totalAbord = daily.reduce((s, d) => s + d.mba_abord + d.base_abord + d.inv_abord, 0);
@@ -125,7 +125,6 @@ export default function Dashboard({ data }: { data: DashboardData }) {
   const invVendas  = daily.reduce((s, d) => s + d.inv_vendas, 0);
 
   const totalFat = daily.reduce((s, d) => s + d.mba_fat + d.base_fat + d.inv_fat, 0);
-  const totalMqls = daily.reduce((s, d) => s + d.mqls, 0);
 
   const metaTotalAbord = goals.mba_mqls + goals.base_mqls + goals.inv_mqls;
   const metaTotalVendas = goals.mba_vendas + goals.base_vendas + goals.inv_vendas;
